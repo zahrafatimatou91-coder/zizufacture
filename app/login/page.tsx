@@ -9,7 +9,9 @@ import { Card } from "@/components/ui/card";
 
 type Mode = "login" | "signup" | "forgot_password";
 
-export default function LoginPage() {
+import { Suspense } from "react";
+
+function LoginContent() {
   const searchParams = useSearchParams();
   const [mode, setMode] = useState<Mode>("login");
   const [error, setError] = useState<string | null>(null);
@@ -232,7 +234,7 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between px-1">
                   <label className="text-sm font-semibold text-slate-700">Mot de passe</label>
                   {mode === "login" && (
-                    <button 
+                     <button 
                       type="button" 
                       onClick={() => { setMode("forgot_password"); setError(null); }}
                       className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
@@ -304,5 +306,13 @@ export default function LoginPage() {
         </Card>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-indigo-600" /></div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
