@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { login, signup, resetPassword } from "@/lib/actions/auth";
 import { Button } from "@/components/ui/button";
-import { Loader2, Mail, Lock, CheckCircle2, ArrowLeft, Eye, EyeOff } from "lucide-react";
+import { Loader2, Mail, Lock, CheckCircle2, ArrowLeft, Eye, EyeOff, Receipt } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 type Mode = "login" | "signup" | "forgot_password";
@@ -110,11 +110,9 @@ function LoginContent() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         
         <div className="relative z-10">
-          <Link href="/" className="flex items-center gap-2 mb-16 hover:opacity-80 transition-opacity w-fit">
-            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-landing-primary font-bold text-xl">
-              Z
-            </div>
-            <span className="text-white text-2xl font-black tracking-tight">Zizu Facture</span>
+          <Link href="/" className="flex items-center gap-2 mb-16 hover:opacity-80 transition-opacity w-fit text-white">
+            <Receipt className="w-8 h-8" />
+            <span className="text-2xl font-black tracking-tight">zizuFacture</span>
           </Link>
           
           <h1 className="text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
@@ -146,11 +144,9 @@ function LoginContent() {
         
         <Card className="w-full max-w-md p-8 sm:p-10 rounded-[2rem] border-0 shadow-2xl shadow-indigo-100/50 bg-white/80 backdrop-blur-xl relative z-10">
           
-          <Link href="/" className="lg:hidden flex items-center gap-2 mb-10 justify-center hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 rounded-lg bg-landing-primary flex items-center justify-center text-white font-bold text-xl shadow-md">
-              Z
-            </div>
-            <span className="text-slate-900 text-2xl font-black tracking-tight">Zizu Facture</span>
+          <Link href="/" className="lg:hidden flex items-center gap-2 mb-10 justify-center hover:opacity-80 transition-opacity text-landing-primary">
+            <Receipt className="w-8 h-8" />
+            <span className="text-slate-900 text-2xl font-black tracking-tight">zizuFacture</span>
           </Link>
 
           {mode !== "forgot_password" ? (
@@ -158,7 +154,7 @@ function LoginContent() {
               <button
                 type="button"
                 onClick={() => { setMode("login"); setError(null); }}
-                className={`flex-1 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${mode === "login" ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`flex-1 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${mode === "login" ? 'bg-white text-landing-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 Se connecter
               </button>

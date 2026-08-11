@@ -26,9 +26,6 @@ export default function Navbar() {
           <Link href="#how-it-works" className="text-landing-on-surface-variant hover:text-landing-primary transition-colors font-label-md text-label-md hover:scale-105">
             Comment ça marche
           </Link>
-          <Link href="#testimonials" className="text-landing-on-surface-variant hover:text-landing-primary transition-colors font-label-md text-label-md hover:scale-105">
-            Témoignages
-          </Link>
           <Link href="#pricing" className="text-landing-on-surface-variant hover:text-landing-primary transition-colors font-label-md text-label-md hover:scale-105">
             Tarifs
           </Link>
@@ -72,13 +69,6 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Comment ça marche
-          </Link>
-          <Link 
-            href="#testimonials" 
-            className="text-landing-on-surface font-label-md py-2 border-b border-landing-surface-dim"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Témoignages
           </Link>
           <Link 
             href="#pricing" 
