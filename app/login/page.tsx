@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 
 type Mode = "login" | "signup" | "forgot_password";
 
+import Link from "next/link";
 import { Suspense } from "react";
 
 function LoginContent() {
@@ -76,7 +77,7 @@ function LoginContent() {
   // Render the success view if we have a success message (for signup or reset password)
   if (success) {
     return (
-      <div className="min-h-screen w-full flex bg-[#f8fafc] items-center justify-center p-6">
+      <div className="min-h-screen w-full flex bg-landing-background items-center justify-center p-6">
         <Card className="w-full max-w-md p-10 rounded-[2rem] border-0 shadow-2xl shadow-indigo-100/50 bg-white text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
@@ -92,7 +93,7 @@ function LoginContent() {
               setSuccess(null);
               setMode("login");
             }}
-            className="w-full rounded-xl bg-slate-900 text-white hover:bg-slate-800 py-6 font-semibold"
+            className="w-full rounded-xl bg-landing-primary text-white hover:bg-landing-primary/90 py-6 font-semibold"
           >
             Retour à la connexion
           </Button>
@@ -102,25 +103,25 @@ function LoginContent() {
   }
 
   return (
-    <div className="min-h-screen w-full flex bg-[#f8fafc]">
+    <div className="min-h-screen w-full flex bg-landing-background">
       
       {/* Left Side - Brand & Presentation */}
-      <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 p-12 flex-col justify-between relative overflow-hidden">
+      <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-landing-primary to-landing-primary-container p-12 flex-col justify-between relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         
         <div className="relative z-10">
-          <div className="flex items-center gap-2 mb-16">
-            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-indigo-900 font-bold text-xl">
+          <Link href="/" className="flex items-center gap-2 mb-16 hover:opacity-80 transition-opacity w-fit">
+            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-landing-primary font-bold text-xl">
               Z
             </div>
             <span className="text-white text-2xl font-black tracking-tight">Zizu Facture</span>
-          </div>
+          </Link>
           
           <h1 className="text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
             Gérez vos factures <br/>
-            <span className="text-indigo-200">en toute simplicité.</span>
+            <span className="text-landing-secondary-fixed">en toute simplicité.</span>
           </h1>
-          <p className="text-indigo-100/80 text-lg max-w-md">
+          <p className="text-landing-on-primary-fixed text-lg max-w-md">
             L'outil indispensable pour les entrepreneurs. Créez, envoyez et suivez vos factures en un clin d'œil.
           </p>
         </div>
@@ -129,10 +130,10 @@ function LoginContent() {
           <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 w-fit">
             <div className="flex -space-x-3">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-indigo-800 bg-indigo-200" />
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-landing-primary-container bg-landing-secondary-fixed" />
               ))}
             </div>
-            <div className="text-sm text-indigo-100">
+            <div className="text-sm text-landing-primary-fixed">
               Rejoignez plus de <span className="font-bold text-white">1,000+</span> utilisateurs
             </div>
           </div>
@@ -141,16 +142,16 @@ function LoginContent() {
 
       {/* Right Side - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-50 to-white lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-landing-background to-white lg:hidden" />
         
         <Card className="w-full max-w-md p-8 sm:p-10 rounded-[2rem] border-0 shadow-2xl shadow-indigo-100/50 bg-white/80 backdrop-blur-xl relative z-10">
           
-          <div className="lg:hidden flex items-center gap-2 mb-10 justify-center">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+          <Link href="/" className="lg:hidden flex items-center gap-2 mb-10 justify-center hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 rounded-lg bg-landing-primary flex items-center justify-center text-white font-bold text-xl shadow-md">
               Z
             </div>
             <span className="text-slate-900 text-2xl font-black tracking-tight">Zizu Facture</span>
-          </div>
+          </Link>
 
           {mode !== "forgot_password" ? (
             <div className="flex bg-slate-100/80 p-1.5 rounded-2xl mb-8">

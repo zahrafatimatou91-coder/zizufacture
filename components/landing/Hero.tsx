@@ -30,19 +30,19 @@ export default function Hero() {
           <Wallet className="w-10 h-10" strokeWidth={1.5} />
         </div>
         
-        <h1 className="font-headline-xl md:text-[56px] leading-[1.1] md:leading-[1.15] text-landing-on-surface mb-landing-unit-md md:mb-landing-unit-lg relative inline-block max-w-[800px] text-3xl">
+        <h1 className="font-headline-xl md:text-[56px] leading-[1.2] md:leading-[1.15] text-landing-on-surface mb-landing-unit-md md:mb-landing-unit-lg relative inline-block max-w-[800px] text-[36px] sm:text-5xl px-2">
           Fini les factures sur Word et Excel : <br className="hidden md:block" />
-          <span className="text-landing-primary relative inline-block">
+          <span className="text-landing-primary relative inline-block mt-1 md:mt-0">
             Facturez comme un pro
             {/* Hand drawn underline SVG */}
-            <svg className="absolute w-[110%] h-5 -bottom-2 -left-[5%] text-landing-secondary-container" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 200 10">
+            <svg className="absolute w-[110%] h-4 md:h-5 -bottom-1 md:-bottom-2 -left-[5%] text-landing-secondary-container" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 200 10">
               <path d="M0,5 Q50,10 100,5 T200,5" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="4"></path>
             </svg>
           </span> 
           {" "}en 2 clics
         </h1>
         
-        <p className="font-body-lg text-body-lg md:text-[20px] text-landing-on-surface-variant mb-10 max-w-2xl mx-auto">
+        <p className="font-body-lg text-[16px] md:text-[20px] text-landing-on-surface-variant mb-10 max-w-2xl mx-auto px-4 leading-relaxed">
           La solution de facturation simple, moderne et pensée pour les entrepreneurs africains.
         </p>
         
