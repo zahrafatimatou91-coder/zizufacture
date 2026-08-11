@@ -19,7 +19,7 @@ export default function Navbar() {
           zizuFacture
         </Link>
         
-        <div className="hidden md:flex items-center gap-landing-gutter">
+        <div className="hidden md:flex items-center gap-10">
           <Link href="#features" className="text-landing-on-surface-variant hover:text-landing-primary transition-colors font-label-md text-label-md hover:scale-105">
             Fonctionnalités
           </Link>
@@ -31,13 +31,13 @@ export default function Navbar() {
           </Link>
         </div>
         
-        <div className="hidden md:flex items-center gap-landing-unit-md">
+        <div className="hidden md:flex items-center gap-6">
           <Link href="/login" className="text-landing-on-surface-variant hover:text-landing-primary font-label-md text-label-md transition-colors">
             Connexion
           </Link>
           <Link 
             href="/login" 
-            className="bg-landing-primary text-landing-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md landing-magnetic-btn flex items-center gap-2 shadow-[0px_4px_14px_rgba(83,65,205,0.3)]"
+            className="bg-landing-primary text-landing-on-primary px-6 py-3 rounded-full font-label-md text-label-md landing-magnetic-btn flex items-center gap-2 shadow-[0px_4px_14px_rgba(83,65,205,0.3)]"
           >
             Commencer
             <ArrowUpRight className="w-4 h-4" />
